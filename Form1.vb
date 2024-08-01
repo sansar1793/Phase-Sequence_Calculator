@@ -11,12 +11,47 @@ Public Class Form1
         Dim Ia_Comp, Ib_Comp, Ic_Comp As Complex
         Dim PPS, NPS, ZPS As Complex
 
-        Ia_mag = TextBox_Iamag.Text
-        Ib_mag = TextBox_Ibmag.Text
-        Ic_mag = TextBox_Icmag.Text
-        Ia_ph = TextBox_Iaph.Text
-        Ib_ph = TextBox_Ibph.Text
-        Ic_ph = TextBox_Icph.Text
+        If TextBox_Iamag.Text = String.Empty Then
+            MsgBox("Provide Phase A Magnitude Value")
+            Exit Sub
+        Else
+            Ia_mag = TextBox_Iamag.Text
+        End If
+
+        If TextBox_Ibmag.Text = String.Empty Then
+            MsgBox("Provide Phase B Magnitude Value")
+            Exit Sub
+        Else
+            Ib_mag = TextBox_Ibmag.Text
+        End If
+
+        If TextBox_Icmag.Text = String.Empty Then
+            MsgBox("Provide Phase C Magnitude Value")
+            Exit Sub
+        Else
+            Ic_mag = TextBox_Icmag.Text
+        End If
+
+        If TextBox_Iaph.Text = String.Empty Then
+            MsgBox("Provide Phase A Angle Value")
+            Exit Sub
+        Else
+            Ia_ph = TextBox_Iaph.Text
+        End If
+
+        If TextBox_Ibph.Text = String.Empty Then
+            MsgBox("Provide Phase B Angle Value")
+            Exit Sub
+        Else
+            Ib_ph = TextBox_Ibph.Text
+        End If
+
+        If TextBox_Icph.Text = String.Empty Then
+            MsgBox("Provide Phase C Angle Value")
+            Exit Sub
+        Else
+            Ic_ph = TextBox_Icph.Text
+        End If
 
         alphaphase = 120 * (Math.PI / 180)
         alphasquare_phase = 240 * (Math.PI / 180)
