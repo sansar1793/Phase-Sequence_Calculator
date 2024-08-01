@@ -43,6 +43,11 @@ Partial Class Form1
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.AngleTextBoxPPS = New System.Windows.Forms.TextBox()
+        Me.AngleTextBoxNPS = New System.Windows.Forms.TextBox()
+        Me.AngleTextBoxZPS = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Button1
@@ -153,21 +158,21 @@ Partial Class Form1
         '
         'TextBoxPPS
         '
-        Me.TextBoxPPS.Location = New System.Drawing.Point(283, 196)
+        Me.TextBoxPPS.Location = New System.Drawing.Point(195, 197)
         Me.TextBoxPPS.Name = "TextBoxPPS"
         Me.TextBoxPPS.Size = New System.Drawing.Size(100, 20)
         Me.TextBoxPPS.TabIndex = 13
         '
         'TextBoxNPS
         '
-        Me.TextBoxNPS.Location = New System.Drawing.Point(283, 243)
+        Me.TextBoxNPS.Location = New System.Drawing.Point(195, 244)
         Me.TextBoxNPS.Name = "TextBoxNPS"
         Me.TextBoxNPS.Size = New System.Drawing.Size(100, 20)
         Me.TextBoxNPS.TabIndex = 14
         '
         'TextBoxZPS
         '
-        Me.TextBoxZPS.Location = New System.Drawing.Point(283, 295)
+        Me.TextBoxZPS.Location = New System.Drawing.Point(195, 296)
         Me.TextBoxZPS.Name = "TextBoxZPS"
         Me.TextBoxZPS.Size = New System.Drawing.Size(100, 20)
         Me.TextBoxZPS.TabIndex = 15
@@ -176,7 +181,7 @@ Partial Class Form1
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(207, 196)
+        Me.Label7.Location = New System.Drawing.Point(119, 197)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(43, 20)
         Me.Label7.TabIndex = 16
@@ -186,7 +191,7 @@ Partial Class Form1
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(207, 241)
+        Me.Label8.Location = New System.Drawing.Point(119, 242)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(44, 20)
         Me.Label8.TabIndex = 17
@@ -196,7 +201,7 @@ Partial Class Form1
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(207, 293)
+        Me.Label9.Location = New System.Drawing.Point(119, 294)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(43, 20)
         Me.Label9.TabIndex = 18
@@ -213,12 +218,58 @@ Partial Class Form1
         Me.Label10.TabIndex = 19
         Me.Label10.Text = "Phase rotation is assumed to be ABC."
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft JhengHei", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(221, 172)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(65, 15)
+        Me.Label11.TabIndex = 20
+        Me.Label11.Text = "Magnitude"
+        '
+        'AngleTextBoxPPS
+        '
+        Me.AngleTextBoxPPS.Location = New System.Drawing.Point(336, 197)
+        Me.AngleTextBoxPPS.Name = "AngleTextBoxPPS"
+        Me.AngleTextBoxPPS.Size = New System.Drawing.Size(100, 20)
+        Me.AngleTextBoxPPS.TabIndex = 21
+        '
+        'AngleTextBoxNPS
+        '
+        Me.AngleTextBoxNPS.Location = New System.Drawing.Point(336, 244)
+        Me.AngleTextBoxNPS.Name = "AngleTextBoxNPS"
+        Me.AngleTextBoxNPS.Size = New System.Drawing.Size(100, 20)
+        Me.AngleTextBoxNPS.TabIndex = 22
+        '
+        'AngleTextBoxZPS
+        '
+        Me.AngleTextBoxZPS.Location = New System.Drawing.Point(336, 296)
+        Me.AngleTextBoxZPS.Name = "AngleTextBoxZPS"
+        Me.AngleTextBoxZPS.Size = New System.Drawing.Size(100, 20)
+        Me.AngleTextBoxZPS.TabIndex = 23
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft JhengHei", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(335, 172)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(101, 15)
+        Me.Label12.TabIndex = 24
+        Me.Label12.Text = "Angle(in Degrees)"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.ClientSize = New System.Drawing.Size(625, 455)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.AngleTextBoxZPS)
+        Me.Controls.Add(Me.AngleTextBoxNPS)
+        Me.Controls.Add(Me.AngleTextBoxPPS)
+        Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
@@ -267,4 +318,9 @@ Partial Class Form1
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents AngleTextBoxPPS As TextBox
+    Friend WithEvents AngleTextBoxNPS As TextBox
+    Friend WithEvents AngleTextBoxZPS As TextBox
+    Friend WithEvents Label12 As Label
 End Class

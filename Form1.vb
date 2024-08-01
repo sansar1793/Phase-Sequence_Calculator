@@ -1,5 +1,4 @@
 ﻿Imports System.Numerics
-Imports Microsoft.Office.Interop.Excel
 
 Public Class Form1
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -30,10 +29,6 @@ Public Class Form1
         Ic_Comp = Complex.FromPolarCoordinates(Ic_mag, Ic_ph * (Math.PI / 180))
 
         PPS = (Ia_Comp + (alpha * Ib_Comp) + (alpha_square * Ic_Comp)) / 3
-        'Console.WriteLine(Ia_Comp)
-        'Console.WriteLine(Ib_Comp)
-        'Console.WriteLine(Ic_Comp)
-        'Console.WriteLine(PPS.Real)
         NPS = (Ia_Comp + (alpha_square * Ib_Comp) + (alpha * Ic_Comp)) / 3
         ZPS = (Ia_Comp + Ib_Comp + Ic_Comp) / 3
 
@@ -42,33 +37,27 @@ Public Class Form1
         NPSmag = RectoPolarMag(NPS)
         NPSang = RectoPolarAngle(NPS)
         ZPSmag = RectoPolarMag(ZPS)
-        ZPSang = 0
-
-        Console.WriteLine(PPSmag)
-        Console.WriteLine(NPSmag)
-        Console.WriteLine(ZPSmag)
-
+        ZPSang = RectoPolarAngle(ZPS)
 
         TextBoxPPS.Text = PPSmag
         TextBoxNPS.Text = NPSmag
         TextBoxZPS.Text = ZPSmag
 
+        AngleTextBoxPPS.Text = PPSang
+        AngleTextBoxNPS.Text = NPSang
+        AngleTextBoxZPS.Text = ZPSang
+
     End Sub
 
     Function RectoPolarMag(comp As Complex) As Double
         Dim mag As Double
-        Console.WriteLine(comp)
-        Console.WriteLine(comp.Real ^ 2)
-        Console.WriteLine(comp.Imaginary ^ 2)
-        Console.WriteLine(Math.Round(Math.Sqrt((comp.Real ^ 2) + (comp.Imaginary ^ 2)), 3))
         mag = Math.Round(Math.Sqrt((comp.Real ^ 2) + (comp.Imaginary ^ 2)), 3)
         Return mag
     End Function
 
     Function RectoPolarAngle(comp As Complex) As Double
         Dim angle As Double
-        angle = Math.Atan((comp.Imaginary) / comp.Real)
-        Console.WriteLine(angle)
+        angle = Math.Round((Math.Atan2(comp.Imaginary, comp.Real)) * (180 / Math.PI), 1)
         Return angle
     End Function
 
