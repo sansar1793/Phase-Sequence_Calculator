@@ -1,6 +1,7 @@
 ﻿Imports System.Numerics
 
 Public Class Form1
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim alpha As Complex
         Dim alpha_square As Complex
@@ -53,8 +54,18 @@ Public Class Form1
             Ic_ph = TextBox_Icph.Text
         End If
 
-        alphaphase = 120 * (Math.PI / 180)
-        alphasquare_phase = 240 * (Math.PI / 180)
+        If RadioButton1.Checked = True Then
+            alphaphase = 120 * (Math.PI / 180)
+            alphasquare_phase = 240 * (Math.PI / 180)
+            Phase_Rot_TextBox.Text = "Phase Rotation Selected for ABC"
+
+        Else
+            If RadioButton2.Checked = True Then
+                alphaphase = 240 * (Math.PI / 180)
+                alphasquare_phase = 120 * (Math.PI / 180)
+                Phase_Rot_TextBox.Text = "Phase Rotation Selected for ACB"
+            End If
+        End If
 
         alpha = Complex.FromPolarCoordinates(1, alphaphase)
         alpha_square = Complex.FromPolarCoordinates(1, alphasquare_phase)
@@ -83,7 +94,6 @@ Public Class Form1
         AngleTextBoxZPS.Text = ZPSang
 
     End Sub
-
     Function RectoPolarMag(comp As Complex) As Double
         Dim mag As Double
         mag = Math.Round(Math.Sqrt((comp.Real ^ 2) + (comp.Imaginary ^ 2)), 3)
@@ -95,6 +105,5 @@ Public Class Form1
         angle = Math.Round((Math.Atan2(comp.Imaginary, comp.Real)) * (180 / Math.PI), 1)
         Return angle
     End Function
-
 
 End Class

@@ -42,12 +42,14 @@ Partial Class Form1
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.AngleTextBoxPPS = New System.Windows.Forms.TextBox()
         Me.AngleTextBoxNPS = New System.Windows.Forms.TextBox()
         Me.AngleTextBoxZPS = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.Phase_Rot_TextBox = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Button1
@@ -207,17 +209,6 @@ Partial Class Form1
         Me.Label9.TabIndex = 18
         Me.Label9.Text = "ZPS"
         '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.Red
-        Me.Label10.Location = New System.Drawing.Point(190, 347)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(246, 17)
-        Me.Label10.TabIndex = 19
-        Me.Label10.Text = "Phase rotation is assumed to be ABC."
-        '
         'Label11
         '
         Me.Label11.AutoSize = True
@@ -259,18 +250,53 @@ Partial Class Form1
         Me.Label12.TabIndex = 24
         Me.Label12.Text = "Angle(in Degrees)"
         '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Checked = True
+        Me.RadioButton1.Location = New System.Drawing.Point(515, 242)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(89, 17)
+        Me.RadioButton1.TabIndex = 25
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "ABC Rotation"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Location = New System.Drawing.Point(515, 278)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(89, 17)
+        Me.RadioButton2.TabIndex = 26
+        Me.RadioButton2.Text = "ACB Rotation"
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
+        'Phase_Rot_TextBox
+        '
+        Me.Phase_Rot_TextBox.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.Phase_Rot_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Phase_Rot_TextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Phase_Rot_TextBox.ForeColor = System.Drawing.Color.Red
+        Me.Phase_Rot_TextBox.Location = New System.Drawing.Point(179, 350)
+        Me.Phase_Rot_TextBox.Name = "Phase_Rot_TextBox"
+        Me.Phase_Rot_TextBox.Size = New System.Drawing.Size(271, 16)
+        Me.Phase_Rot_TextBox.TabIndex = 27
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.ClientSize = New System.Drawing.Size(625, 455)
+        Me.Controls.Add(Me.Phase_Rot_TextBox)
+        Me.Controls.Add(Me.RadioButton2)
+        Me.Controls.Add(Me.RadioButton1)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.AngleTextBoxZPS)
         Me.Controls.Add(Me.AngleTextBoxNPS)
         Me.Controls.Add(Me.AngleTextBoxPPS)
         Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
@@ -317,10 +343,12 @@ Partial Class Form1
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents Label10 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents AngleTextBoxPPS As TextBox
     Friend WithEvents AngleTextBoxNPS As TextBox
     Friend WithEvents AngleTextBoxZPS As TextBox
     Friend WithEvents Label12 As Label
+    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents Phase_Rot_TextBox As TextBox
 End Class
