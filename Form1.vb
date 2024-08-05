@@ -7,7 +7,7 @@ Public Class Form1
         Dim alpha_square As Complex
         Dim alphaphase, alphasquare_phase As Double
         Dim PPSmag, PPSang, NPSmag, NPSang, ZPSmag, ZPSang As Double
-        Dim Ia_mag, Ib_mag, Ic_mag As Integer
+        Dim Ia_mag, Ib_mag, Ic_mag As Double
         Dim Ia_ph, Ib_ph, Ic_ph As Double
         Dim Ia_Comp, Ib_Comp, Ic_Comp As Complex
         Dim PPS, NPS, ZPS As Complex
